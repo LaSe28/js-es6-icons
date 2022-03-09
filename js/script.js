@@ -148,8 +148,8 @@ types.addEventListener('change', function(){
                 return true;
             }
         })
+        insertIcons(filteredIcons, container)
     }
-    insertIcons(filteredIcons, container)
 
     
     console.log(filteredIcons)
