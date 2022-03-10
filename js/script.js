@@ -117,6 +117,8 @@ let container = document.querySelector('.icons-container')
 let types = document.querySelector('#types')
 let arrType = []
 
+icons.forEach((objIcon)=> objIcon.color = getRandomColor());
+
 function insertIcons (iconsArray, iconsContainer){
     container.innerHTML = ''
     iconsArray.forEach(element =>{
@@ -154,3 +156,16 @@ types.addEventListener('change', function(){
     
     console.log(filteredIcons)
 });
+
+function getRandomColor(){
+	let strColorChars = '0123456789ABCDEF';
+	let hexaColor = '#';
+	for (let i = 0; i< 6; i++){
+		hexaColor += strColorChars[getRandom(0 ,15)]
+	}
+	return hexaColor;
+}
+
+function getRandom(min, max){
+	return Math.floor(Math.random()* (max-min+1))+min;
+}
